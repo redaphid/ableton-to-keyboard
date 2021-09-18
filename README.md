@@ -5,3 +5,4 @@ then [push-wrapper](https://github.com/crosslandwa/push-wrapper) to read from th
 
 
 nc 127.0.0.1 8080 30115
+[Event codes](https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h)

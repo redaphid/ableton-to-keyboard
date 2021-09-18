@@ -13,5 +13,6 @@ const virtualKeyboardRequest = '30115'
 socket.on('connect', () => {
     socket.write(virtualKeyboardRequest)
   console.log(`Established a TCP connection with ${host}:${port}`);
-  socket.destroy();
+//   socket.destroy();
+    socket.write('30114')
 });
