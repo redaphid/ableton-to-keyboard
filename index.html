@@ -9,10 +9,23 @@
 
         // bind to first available MIDI input
         const inputs =  midiAccess.inputs.values()
-        for(let device of inputs) {
-            if(!device.manufacturer) continue //might be midi loopback
-            device.onmidimessage = event = push.midiFromHardware(event.data)
+        for(let input of inputs) {
+            if(!input.manufacturer) continue //might be midi loopback
+            input.onmidimessage = (event) =>{
+                if(!event.data) return //I guess this happens sometimes?
+                push.midiFromHardware(event.data)                
+                push.gridRow(0)[0].ledRGB(255,255,255)
+            } 
             
-        }        
+        }
+
+        const outputs =  midiAccess.outputs.values()
+        for(let output of outputs) {
+            if(!output.manufacturer) continue //might be midi loopback
+            push.onMidiToHardware(output.send.bind(output))            
+
+        }
+
+
     })
 </script>
