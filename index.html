@@ -1,0 +1,18 @@
+<script src="node_modules/push-wrapper/dist/umd/push-wrapper.js"></script>
+<script>
+    navigator.requestMIDIAccess({ sysex: true }).then((midiAccess) => {
+        const push = pushWrapper.push()
+        
+        // bind to first available MIDI output
+        // const output = midiAccess.outputs.values()[0].value
+        // push.onMidiToHardware(output.send.bind(output))
+
+        // bind to first available MIDI input
+        const inputs =  midiAccess.inputs.values()
+        for(let device of inputs) {
+            if(!device.manufacturer) continue //might be midi loopback
+            device.onmidimessage = event = push.midiFromHardware(event.data)
+            
+        }        
+    })
+</script>
