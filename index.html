@@ -3,11 +3,6 @@
     navigator.requestMIDIAccess({ sysex: true }).then((midiAccess) => {
         const push = pushWrapper.push()
         
-        // bind to first available MIDI output
-        // const output = midiAccess.outputs.values()[0].value
-        // push.onMidiToHardware(output.send.bind(output))
-
-        // bind to first available MIDI input
         const inputs =  midiAccess.inputs.values()
         for(let input of inputs) {
             if(!input.manufacturer) continue //might be midi loopback
@@ -23,9 +18,11 @@
         for(let output of outputs) {
             if(!output.manufacturer) continue //might be midi loopback
             push.onMidiToHardware(output.send.bind(output))            
-
         }
-
+        const socket = new WebSocket('ws://localhost:8080')
+        socket,addEventListener('open', (event) => {
+            socket.send('30115')
+        })
 
     })
 </script>
