@@ -1,0 +1,23 @@
+{
+  "name": "ableton-to-keyboard",
+  "version": "1.0.0",
+  "description": "Does a lot of crazy shit so I can use the Ableton Push as a macro pad",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redaphid/ableton-to-keyboard.git"
+  },
+  "keywords": [
+    "ableton",
+    "hid"
+  ],
+  "author": "redaphid <iam@aaronherres.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/redaphid/ableton-to-keyboard/issues"
+  },
+  "homepage": "https://github.com/redaphid/ableton-to-keyboard#readme"
+}
