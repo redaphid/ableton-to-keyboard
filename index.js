@@ -1,4 +1,8 @@
 const pushWrapper = require('push-wrapper')
+const midi = require('midi')
+
+const input = new midi.Input()
+console.log(input.getPortCount())
 const push = pushWrapper.push()
 push.onMidiToHardware(console.log)
 console.log('huh?')

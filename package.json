@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/redaphid/ableton-to-keyboard#readme",
   "dependencies": {
-    "push-wrapper": "^1.1.0",
+    "midi": "^2.0.0",
+    "push-wrapper": "^2.3.1",
     "typescript": "^4.4.3"
   }
 }
