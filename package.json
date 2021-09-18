@@ -4,7 +4,8 @@
   "description": "Does a lot of crazy shit so I can use the Ableton Push as a macro pad",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./index.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/redaphid/ableton-to-keyboard/issues"
   },
-  "homepage": "https://github.com/redaphid/ableton-to-keyboard#readme"
+  "homepage": "https://github.com/redaphid/ableton-to-keyboard#readme",
+  "dependencies": {
+    "push-wrapper": "^1.1.0",
+    "typescript": "^4.4.3"
+  }
 }
